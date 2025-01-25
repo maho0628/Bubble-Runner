@@ -55,12 +55,12 @@ public class SceneTransitionManager : MonoBehaviour
         //PlayBGMForScene();
 
     }
-    //public void ReloadCurrentScene()
-    //{
-    //    if (isReloading) return; // リロード中なら処理をスキップ
-    //    isReloading = true; // リロード中に設定
-    //    StartCoroutine(FadeOut(SceneManager.GetActiveScene().name));
-    //}
+    public void ReloadCurrentScene()
+    {
+        if (isReloading) return; // リロード中なら処理をスキップ
+        isReloading = true; // リロード中に設定
+        StartCoroutine(FadeOut(SceneManager.GetActiveScene().name));
+    }
     public void InitializeReferences()
     {
 
