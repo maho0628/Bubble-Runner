@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Yamashina/Scene/TitleScene.unity
     guid: 9c12bce3b5a9f50448bc48a30cff998a
   - enabled: 1
-    path: Assets/Yamashina/Scene/MainGame.unity
-    guid: e6367f6419c065e47bce5c435344d559
+    path: Assets/Preston/MainGame.unity
+    guid: 23d975e699bd644149ecc223498cbc07
   - enabled: 1
     path: Assets/Yamashina/Scene/ResultScene.unity
     guid: 366242d9b71d01245b2c82fe9381425d

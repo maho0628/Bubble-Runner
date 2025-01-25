@@ -29,15 +29,15 @@ public class PlayerControl : MonoBehaviour
     private float elapsedTime = 0.0f; // 経過時間
     private bool isGoalReached = false; // ゴール判定
 
-    [Header("UI Elements")]
-    public Text lifeText; // UI表示用
-    public Text speedText; // UI表示用
+    //[Header("UI Elements")]
+    //public Text lifeText; // UI表示用
+    //public Text speedText; // UI表示用
 
     void Start()
     {
         currentParts = maxParts; // 最大ライフでスタート
         currentSpeed = baseSpeed;
-        UpdateUI();
+        //UpdateUI();
     }
     void Update()
     {
@@ -113,7 +113,7 @@ public class PlayerControl : MonoBehaviour
         {
             GameOver();
         }
-        UpdateUI();
+        //UpdateUI();
     }
     private void GoalReached()
     {
@@ -138,17 +138,17 @@ public class PlayerControl : MonoBehaviour
     //    Debug.Log("QuickTime Event Triggered!");
     //}
 
-    private void UpdateUI()
-    {
-        lifeText.text = "Life: " + currentParts;
-        speedText.text = "Speed: " + currentSpeed.ToString("F1");
-    }
+    //private void UpdateUI()
+    //{
+    //    lifeText.text = "Life: " + currentParts;
+    //    speedText.text = "Speed: " + currentSpeed.ToString("F1");
+    //}
     public void RecoverLife(int amount)
     {
         currentParts = Mathf.Clamp(currentParts + amount, 0, maxParts); // ライフ回復、最大値を超えない
         currentSpeed += baseSpeed / currentParts; // スピードを再計算
         Debug.Log($"Life recovered! Current life: {currentParts}");
-        UpdateUI();
+        //UpdateUI();
     }
     private void GameOver()
     {
