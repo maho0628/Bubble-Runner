@@ -42,7 +42,7 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         // キャラクターを前方に移動
-        transform.Translate(Vector3.forward *currentSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.forward *currentSpeed * Time.deltaTime);
 
         // レーンの切り替え
         if (Input.GetKeyDown(KeyCode.A))
