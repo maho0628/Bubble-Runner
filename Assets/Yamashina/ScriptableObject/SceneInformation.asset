@@ -15,6 +15,7 @@ MonoBehaviour:
   sceneObject:
   - m_SceneName: TitleScene
   - m_SceneName: MainGame
+  - m_SceneName: ResultScene
   sceneNames: []
   previousScene: 0
   currentScene: 0

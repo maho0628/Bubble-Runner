@@ -15,10 +15,10 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Runtime Values")]
    [SerializeField,Tooltip("The current speed of the character, dynamically adjusted during gameplay.")]
-    private float currentSpeed; // 現在の速度
+    public static float currentSpeed; // 現在の速度
     [SerializeField, Tooltip("The current number of lives the character has.This decreases when the character hits obstacles")]
-  
-    private int currentParts; // 現在のライフ数
+
+    public static int currentParts; // 現在のライフ数
     public Transform[] lanes; // レーンの位置
     private int currentLane = 1; // 現在のレーン (0 = 左, 1 = 中央, 2 = 右)
     [Header("Goal Settings")]
@@ -119,6 +119,7 @@ public class PlayerControl : MonoBehaviour
     {
         isGoalReached = true; // ゴール到達フラグ
         Debug.Log("Goal Reached!");
+        SceneTransitionManager.instance.NextSceneButton(2);
 
         // ゴール達成時の処理をここに追加
     }
@@ -128,6 +129,7 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("Time Out! Game Over.");
         GameOver();
         // 時間切れ時の処理をここに追加
+
     }
 
     //private void QuickTimeEvent()

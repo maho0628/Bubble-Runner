@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Yamashina/Scene/MainGame.unity
     guid: e6367f6419c065e47bce5c435344d559
+  - enabled: 1
+    path: Assets/Yamashina/Scene/ResultScene.unity
+    guid: 366242d9b71d01245b2c82fe9381425d
   m_configObjects: {}
