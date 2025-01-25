@@ -163,7 +163,7 @@ public class PlayerControl : MonoBehaviour
     {
         isGoalReached = true; // ゴール到達フラグ
         Debug.Log("Goal Reached!");
-        SceneTransitionManager.instance.NextSceneButton(2);
+        SceneTransitionManager.instance.NextSceneButton(3);
 
         // ゴール達成時の処理をここに追加
     }
