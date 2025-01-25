@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class CubeBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0.3f, 0, 0);
+        transform.position += new Vector3(3f * Time.deltaTime , 0, 0);
         if (transform.position.x > 4)
         {
             Destroy(gameObject);
