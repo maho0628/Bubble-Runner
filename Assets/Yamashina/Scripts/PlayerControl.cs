@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,9 +10,11 @@ public class PlayerControl : MonoBehaviour
 {
     [Header("Game Settings")]
     [SerializeField, Tooltip("The base speed of the character. This value serves as the basis for other speed calculations.")]
-    private float baseSpeed = 10f; // 基本速度
+    private float baseSpeed = 20f; // 基本速度
     [SerializeField, Tooltip("The current speed of the character, dynamically adjusted during gameplay.")]
     private int maxParts = 6; // 最大ライフ数
+    // Movement style
+    public bool LANECHANGER = true;
 
     [Header("Runtime Values")]
    [SerializeField,Tooltip("The current speed of the character, dynamically adjusted during gameplay.")]
@@ -33,27 +36,43 @@ public class PlayerControl : MonoBehaviour
     //[Header("UI Elements")]
     //public Text lifeText; // UI表示用
     //public Text speedText; // UI表示用
+    public List<ParticleSystem> bubbleBodies = new List<ParticleSystem>(); // バブルのリスト
+    private int bubbleDensity = 300; // バブルの密度
 
     void Start()
     {
         currentParts = maxParts; // 最大ライフでスタート
         currentSpeed = baseSpeed;
-        //UpdateUI();
+        //UpdateUI
+        bubbleBodies.AddRange(GetComponentsInChildren<ParticleSystem>());
+        
     }
     void Update()
     {
         // キャラクターを前方に移動
+        // Always go forward!
         transform.Translate(Vector3.forward *currentSpeed * Time.deltaTime);
 
-        // レーンの切り替え
-        if (Input.GetKeyDown(KeyCode.A))
+        // Two movement options 
+        if (LANECHANGER)
         {
-            ChangeLane(-1);
+            // レーンの切り替え
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                ChangeLane(-1);
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                ChangeLane(1);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else
         {
-            ChangeLane(1);
+            float move = Input.GetAxis("Horizontal") * 20.0f * Time.deltaTime;
+            transform.Translate(move, 0, 0);
         }
+
+
         if (currentParts <= 0)
         {
             currentParts = 1; // 最低でも1にする
@@ -114,6 +133,7 @@ public class PlayerControl : MonoBehaviour
         if (other.CompareTag("Obstacle")) //player Obstacle hit
         {
             HitObstacle();
+            other.enabled = false;
         }
 
         //if (other.CompareTag("NPC"))//npc player hit
@@ -128,7 +148,9 @@ public class PlayerControl : MonoBehaviour
         {
             currentParts--;
             Debug.Log(currentParts);
-            currentSpeed -= baseSpeed / currentParts; // スピードを再計算
+            currentSpeed -= baseSpeed / currentParts; // スピードを再計算 
+            bubbleDensity -= (300 / 5);
+            SetNewBubbleDensity(bubbleDensity);
         }
         else
         {
@@ -169,6 +191,16 @@ public class PlayerControl : MonoBehaviour
         currentParts = Mathf.Clamp(currentParts + amount, 0, maxParts); // ライフ回復、最大値を超えない
         currentSpeed += baseSpeed / currentParts; // スピードを再計算
         Debug.Log($"Life recovered! Current life: {currentParts}");
+
+        bubbleDensity += (300 / 5);
+
+        if (bubbleDensity > 300)
+        {
+            bubbleDensity = 300;
+        }
+
+        SetNewBubbleDensity(bubbleDensity);
+
         //UpdateUI();
     }
     private void GameOver()
@@ -177,5 +209,15 @@ public class PlayerControl : MonoBehaviour
         currentSpeed = 0;
         SceneTransitionManager.instance.NextSceneButton(0);
         // ゲーム終了処理
+    }
+
+    public void SetNewBubbleDensity(int newDensity)
+    {
+        // density starts at 300
+        foreach(ParticleSystem bubble in bubbleBodies)
+        {
+            var main = bubble.main;
+            main.maxParticles = newDensity;
+        }
     }
 }
