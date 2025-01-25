@@ -21,6 +21,13 @@ public class PlayerControl : MonoBehaviour
     private int currentParts; // 現在のライフ数
     public Transform[] lanes; // レーンの位置
     private int currentLane = 1; // 現在のレーン (0 = 左, 1 = 中央, 2 = 右)
+    [Header("Goal Settings")]
+    public Transform goalTransform; // ゴール地点
+    public float goalRadius = 1.0f; // ゴール地点の範囲
+    public float timeLimit = 30.0f; // 制限時間 (秒)
+
+    private float elapsedTime = 0.0f; // 経過時間
+    private bool isGoalReached = false; // ゴール判定
 
     [Header("UI Elements")]
     public Text lifeText; // UI表示用
@@ -29,7 +36,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         currentParts = maxParts; // 最大ライフでスタート
-        currentSpeed = baseSpeed * currentParts; // 初期速度設定
+        currentSpeed = baseSpeed;
         UpdateUI();
     }
     void Update()
@@ -45,6 +52,27 @@ public class PlayerControl : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.D))
         {
             ChangeLane(1);
+        }
+        if (currentParts <= 0)
+        {
+            currentParts = 1; // 最低でも1にする
+        }
+        if (!isGoalReached)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // プレイヤーがゴール地点に到達しているか判定
+            float distanceToGoal = Vector3.Distance(transform.position, goalTransform.position);
+            if (distanceToGoal <= goalRadius && elapsedTime <= timeLimit)
+            {
+                GoalReached(); // ゴール判定処理
+            }
+
+            // 時間切れのチェック
+            if (elapsedTime > timeLimit)
+            {
+                TimeOut(); // タイムアウト処理
+            }
         }
     }
     private void ChangeLane(int direction)
@@ -71,7 +99,8 @@ public class PlayerControl : MonoBehaviour
         if (currentParts > 1)
         {
             currentParts--;
-            currentSpeed = baseSpeed * currentParts; // スピードを再計算
+            Debug.Log(currentParts);
+            currentSpeed -= baseSpeed / currentParts; // スピードを再計算
             QuickTimeEvent(); // クイックタイムイベントを呼び出す
         }
         else
@@ -79,6 +108,20 @@ public class PlayerControl : MonoBehaviour
             GameOver();
         }
         UpdateUI();
+    }
+    private void GoalReached()
+    {
+        isGoalReached = true; // ゴール到達フラグ
+        Debug.Log("Goal Reached!");
+
+        // ゴール達成時の処理をここに追加
+    }
+
+    private void TimeOut()
+    {
+        Debug.Log("Time Out! Game Over.");
+        GameOver();
+        // 時間切れ時の処理をここに追加
     }
 
     private void QuickTimeEvent()

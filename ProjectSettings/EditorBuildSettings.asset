@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Yamashina/TitleScene.unity
+    path: Assets/Yamashina/Scene/TitleScene.unity
     guid: 9c12bce3b5a9f50448bc48a30cff998a
   - enabled: 1
-    path: Assets/Yamashina/MainGame.unity
+    path: Assets/Yamashina/Scene/MainGame.unity
     guid: e6367f6419c065e47bce5c435344d559
   m_configObjects: {}
