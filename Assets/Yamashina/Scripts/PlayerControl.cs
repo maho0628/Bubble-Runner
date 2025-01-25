@@ -104,6 +104,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("Jump!");
             if (!isJumping)
             {
                 GetComponentInChildren<Rigidbody>().AddForce(new Vector2(0, 5), ForceMode.Impulse);
@@ -149,8 +150,6 @@ public class PlayerControl : MonoBehaviour
             currentParts--;
             Debug.Log(currentParts);
             currentSpeed -= baseSpeed / maxParts; // スピードを再計算 
-            Debug.Log(currentSpeed);
-
             bubbleDensity -= (300 / 5);
             SetNewBubbleDensity(bubbleDensity);
         }
