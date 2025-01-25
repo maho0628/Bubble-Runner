@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67817cb539fad2b44bab68ea93799e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
+  baseSpeed: 2.2
   maxParts: 6
   lanes:
   - {fileID: 830452143}
