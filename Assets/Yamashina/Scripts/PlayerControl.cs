@@ -29,6 +29,7 @@ public class PlayerControl : MonoBehaviour
     private float elapsedTime = 0.0f; // 経過時間
     private bool isGoalReached = false; // ゴール判定
 
+    private bool isJumping = false;
     //[Header("UI Elements")]
     //public Text lifeText; // UI表示用
     //public Text speedText; // UI表示用
@@ -42,7 +43,7 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         // キャラクターを前方に移動
-        //transform.Translate(Vector3.forward *currentSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward *currentSpeed * Time.deltaTime);
 
         // レーンの切り替え
         if (Input.GetKeyDown(KeyCode.A))
@@ -57,6 +58,9 @@ public class PlayerControl : MonoBehaviour
         {
             currentParts = 1; // 最低でも1にする
         }
+
+        Jump();
+
         if (!isGoalReached)
         {
             elapsedTime += Time.deltaTime;
@@ -76,6 +80,23 @@ public class PlayerControl : MonoBehaviour
 
 
         }
+    }
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (!isJumping)
+            {
+                GetComponentInChildren<Rigidbody>().AddForce(new Vector2(0, 5), ForceMode.Impulse);
+                isJumping = true;
+            }
+            StartCoroutine(ResetJump());
+        }
+    }
+    IEnumerator ResetJump()
+    {
+        yield return new WaitForSeconds(1);
+        isJumping = false;
     }
     private void ChangeLane(int direction)
     {
