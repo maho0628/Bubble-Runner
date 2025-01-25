@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5493342849921832827}
-  - component: {fileID: 2752137397931085381}
+  - component: {fileID: 2036908694365405528}
   m_Layer: 0
   m_Name: SceneTransitionManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2752137397931085381
+--- !u!114 &2036908694365405528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneInformation: {fileID: 11400000, guid: 326b862bcfad9a64d924ff3b4f5806c4, type: 2}
-  fadePrefab: {fileID: 0}
+  fadePrefab: {fileID: 5779087832182671212, guid: 08114d14f2e28284d82146f6d1a803fa, type: 3}
   currentScene: 0
   fadeSpeed: 2

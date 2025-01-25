@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67817cb539fad2b44bab68ea93799e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 3
+  baseSpeed: 5
   maxParts: 6
   lanes:
   - {fileID: 830452143}
@@ -563,36 +563,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2752137397931085381, guid: 8196467f728e44a4fbf6f7d793d5d6ee, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2913879190371582953, guid: 8196467f728e44a4fbf6f7d793d5d6ee, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 273324832}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8196467f728e44a4fbf6f7d793d5d6ee, type: 3}
---- !u!1 &273324831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2913879190371582953, guid: 8196467f728e44a4fbf6f7d793d5d6ee, type: 3}
-  m_PrefabInstance: {fileID: 273324830}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &273324832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273324831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 039d6f67fce38f044b35f4df06eed0af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneInformation: {fileID: 11400000, guid: 326b862bcfad9a64d924ff3b4f5806c4, type: 2}
-  fadePrefab: {fileID: 5779087832182671212, guid: 08114d14f2e28284d82146f6d1a803fa, type: 3}
-  currentScene: 0
-  fadeSpeed: 2
 --- !u!1 &274526494
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,11 +761,11 @@ Transform:
   m_GameObject: {fileID: 369706012}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51900005, y: -1.3889999, z: 10.67}
+  m_LocalPosition: {x: 3.11, y: -1.79, z: 18.18}
   m_LocalScale: {x: 35.902504, y: 2.0571, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2061532727}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &493141261
 GameObject:
@@ -1842,8 +1817,7 @@ Transform:
   m_LocalPosition: {x: 3.229, y: 0.26, z: 7.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 369706016}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -1860,6 +1834,7 @@ SceneRoots:
   - {fileID: 38449327}
   - {fileID: 1168437304}
   - {fileID: 273324830}
+  - {fileID: 369706016}
   - {fileID: 2061532727}
   - {fileID: 602687967}
   - {fileID: 708607706}
