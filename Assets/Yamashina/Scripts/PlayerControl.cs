@@ -73,6 +73,8 @@ public class PlayerControl : MonoBehaviour
             {
                 TimeOut(); // タイムアウト処理
             }
+
+
         }
     }
     private void ChangeLane(int direction)
@@ -88,10 +90,15 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle")) //player Obstacle hit
         {
             HitObstacle();
         }
+
+        //if (other.CompareTag("NPC"))//npc player hit
+        //{
+        //    QuickTimeEvent();
+        //}
     }
 
     private void HitObstacle()
@@ -101,7 +108,6 @@ public class PlayerControl : MonoBehaviour
             currentParts--;
             Debug.Log(currentParts);
             currentSpeed -= baseSpeed / currentParts; // スピードを再計算
-            QuickTimeEvent(); // クイックタイムイベントを呼び出す
         }
         else
         {
@@ -124,18 +130,24 @@ public class PlayerControl : MonoBehaviour
         // 時間切れ時の処理をここに追加
     }
 
-    private void QuickTimeEvent()
-    {
-        // クイックタイムイベントのロジック (ここでは簡略化)
-        Debug.Log("QuickTime Event Triggered!");
-    }
+    //private void QuickTimeEvent()
+    //{
+    //    // クイックタイムイベントのロジック (ここでは簡略化)
+    //    Debug.Log("QuickTime Event Triggered!");
+    //}
 
     private void UpdateUI()
     {
         lifeText.text = "Life: " + currentParts;
         speedText.text = "Speed: " + currentSpeed.ToString("F1");
     }
-
+    public void RecoverLife(int amount)
+    {
+        currentParts = Mathf.Clamp(currentParts + amount, 0, maxParts); // ライフ回復、最大値を超えない
+        currentSpeed += baseSpeed / currentParts; // スピードを再計算
+        Debug.Log($"Life recovered! Current life: {currentParts}");
+        UpdateUI();
+    }
     private void GameOver()
     {
         Debug.Log("Game Over");
