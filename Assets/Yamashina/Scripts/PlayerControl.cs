@@ -51,7 +51,7 @@ public class PlayerControl : MonoBehaviour
     {
         // キャラクターを前方に移動
         // Always go forward!
-        transform.Translate(Vector3.forward *currentSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
 
         // Two movement options 
         if (LANECHANGER)
@@ -148,7 +148,9 @@ public class PlayerControl : MonoBehaviour
         {
             currentParts--;
             Debug.Log(currentParts);
-            currentSpeed -= baseSpeed / currentParts; // スピードを再計算 
+            currentSpeed -= baseSpeed / maxParts; // スピードを再計算 
+            Debug.Log(currentSpeed);
+
             bubbleDensity -= (300 / 5);
             SetNewBubbleDensity(bubbleDensity);
         }
