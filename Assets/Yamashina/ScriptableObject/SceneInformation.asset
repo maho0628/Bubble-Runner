@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SceneInformation
   m_EditorClassIdentifier: 
   sceneObject:
+  - m_SceneName: TitleScene
   - m_SceneName: MainGame
   sceneNames: []
   previousScene: 0

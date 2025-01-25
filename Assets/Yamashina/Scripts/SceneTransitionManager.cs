@@ -11,7 +11,7 @@ public class SceneTransitionManager : MonoBehaviour
     private Image fadeInstance; // 実際に使用するフェード用 Image
     [SerializeField] private SceneInformation.SCENE currentScene;  // 今のシーン                  // 今のシーン
     private bool isReloading = false; // リロード中かどうかを判定するフラグ
-    [Header("フェード速度、 0.1 ～ 5.0の間で入力")]
+    [Header("fadeSpeed、 0.1 ～ 5.0")]
     [SerializeField] private float fadeSpeed = 2.0f; // フェード速度
     public static SceneTransitionManager instance;
 
