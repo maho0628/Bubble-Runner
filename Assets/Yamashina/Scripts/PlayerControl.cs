@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField, Tooltip("The base speed of the character. This value serves as the basis for other speed calculations.")]
     private float baseSpeed = 20f; // 基本速度
     [SerializeField, Tooltip("The current speed of the character, dynamically adjusted during gameplay.")]
-    private int maxParts = 6; // 最大ライフ数
+    private int maxLives = 3; // 最大ライフ数
     // Movement style
     public bool LANECHANGER = true;
 
@@ -37,21 +37,23 @@ public class PlayerControl : MonoBehaviour
     //public Text lifeText; // UI表示用
     //public Text speedText; // UI表示用
     public List<ParticleSystem> bubbleBodies = new List<ParticleSystem>(); // バブルのリスト
-    private int bubbleDensity = 300; // バブルの密度
-
+    public List<int> bubbleBodyMaxEmissionRates = new List<int>();
     private bool canUpdate = false;
 
     void Start()
     {
-        currentParts = maxParts; // 最大ライフでスタート
+        currentParts = maxLives; // 最大ライフでスタート
         currentSpeed = baseSpeed;
         //UpdateUI
         bubbleBodies.AddRange(GetComponentsInChildren<ParticleSystem>());
         canUpdate = false;
+        foreach (ParticleSystem bubbles in bubbleBodies)
+        {
+            bubbleBodyMaxEmissionRates.Add((int)bubbles.emission.rateOverTime.constant);
+        }
 
         // Wait n seconds before starting to run
         StartCoroutine(DelayStart(3f));
-
     }
     IEnumerator DelayStart(float delay)
     {
@@ -91,6 +93,10 @@ public class PlayerControl : MonoBehaviour
             transform.Translate(move, 0, 0);
         }
 
+        if(transform.position.y < -1f)
+        {
+            GameOver(); // Dont go through the floor
+        }
 
         if (currentParts <= 0)
         {
@@ -153,11 +159,17 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("goal"))
+        {
+            GoalReached();
+        }
+
         if (other.CompareTag("Obstacle")) //player Obstacle hit
         {
             HitObstacle();
             other.enabled = false;
         }
+
 
         //if (other.CompareTag("NPC"))//npc player hit
         //{
@@ -172,9 +184,8 @@ public class PlayerControl : MonoBehaviour
             currentParts--;
             Debug.Log(currentParts);
             MultiAudio.ins.PlaySEByName("ObstacleCollide");
-            currentSpeed -= baseSpeed / maxParts; // スピードを再計算 
-            bubbleDensity -= (300 / 5);
-            SetNewBubbleDensity(bubbleDensity);
+            currentSpeed -= baseSpeed / maxLives; // スピードを再計算 
+            SetNewBubbleDensity();
         }
         else
         {
@@ -212,18 +223,19 @@ public class PlayerControl : MonoBehaviour
     //}
     public void RecoverLife(int amount)
     {
-        currentParts = Mathf.Clamp(currentParts + amount, 0, maxParts); // ライフ回復、最大値を超えない
+        currentParts = Mathf.Clamp(currentParts + amount, 0, maxLives); // ライフ回復、最大値を超えない
         currentSpeed += baseSpeed / currentParts; // スピードを再計算
         Debug.Log($"Life recovered! Current life: {currentParts}");
         MultiAudio.ins.PlaySEByName("PickUpSpeechBubblePlus");
-        bubbleDensity += (300 / 5);
 
-        if (bubbleDensity > 300)
-        {
-            bubbleDensity = 300;
-        }
+        //bubbleDensity += (300 / 5);
 
-        SetNewBubbleDensity(bubbleDensity);
+        //if (bubbleDensity > 300)
+        //{
+        //    bubbleDensity = 300;
+        //}
+
+        SetNewBubbleDensity();
 
         //UpdateUI();
     }
@@ -236,13 +248,14 @@ public class PlayerControl : MonoBehaviour
         // ゲーム終了処理
     }
 
-    public void SetNewBubbleDensity(int newDensity)
+    public void SetNewBubbleDensity()
     {
-        // density starts at 300
-        foreach(ParticleSystem bubble in bubbleBodies)
+        foreach (ParticleSystem bubble in bubbleBodies)
         {
-            var main = bubble.main;
-            main.maxParticles = newDensity;
+            var emission = bubble.emission;
+            float newEmissionRate = bubbleBodyMaxEmissionRates[bubbleBodies.IndexOf(bubble)] * (currentParts / maxLives );
+            Debug.Log(newEmissionRate);
+            emission.rateOverTime = newEmissionRate;
         }
     }
 }
