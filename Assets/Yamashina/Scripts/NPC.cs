@@ -22,15 +22,25 @@ public class NPC : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) // Playerタグかどうか確認
         {
             PlayerControl player = other.GetComponent<PlayerControl>();
             if (player != null)
             {
+                Debug.Log($"Player detected: {other.name}, Tag: {other.tag}");
                 player.RecoverLife(lifeRecoveryAmount); // プレイヤーのライフを回復
                 Destroy(gameObject); // NPCを消す
             }
+            else
+            {
+                Debug.Log($"Triggered by {other.name}, but PlayerControl component was not found.");
+            }
+        }
+        else // Playerタグではない場合
+        {
+            Debug.Log($"Object {other.name} entered the trigger but does not have the Player tag. Its tag is: {other.tag}");
         }
     }
 
 }
+
