@@ -149,6 +149,7 @@ public class PlayerControl : MonoBehaviour
         {
             currentParts--;
             Debug.Log(currentParts);
+            MultiAudio.ins.PlaySEByName("ObstacleCollide");
             currentSpeed -= baseSpeed / maxParts; // スピードを再計算 
             bubbleDensity -= (300 / 5);
             SetNewBubbleDensity(bubbleDensity);
@@ -192,7 +193,7 @@ public class PlayerControl : MonoBehaviour
         currentParts = Mathf.Clamp(currentParts + amount, 0, maxParts); // ライフ回復、最大値を超えない
         currentSpeed += baseSpeed / currentParts; // スピードを再計算
         Debug.Log($"Life recovered! Current life: {currentParts}");
-
+        MultiAudio.ins.PlaySEByName("PickUpSpeechBubblePlus");
         bubbleDensity += (300 / 5);
 
         if (bubbleDensity > 300)
@@ -207,6 +208,7 @@ public class PlayerControl : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("Game Over");
+        MultiAudio.ins.PlaySEByName("GameOverSound");
         currentSpeed = 0;
         SceneTransitionManager.instance.NextSceneButton(0);
         // ゲーム終了処理

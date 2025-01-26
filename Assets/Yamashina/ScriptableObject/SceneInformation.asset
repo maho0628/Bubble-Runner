@@ -17,7 +17,11 @@ MonoBehaviour:
   - m_SceneName: TextScene
   - m_SceneName: MainGame
   - m_SceneName: ResultScene
-  sceneNames: []
+  sceneNames:
+  - TitleScene
+  - TextScene
+  - MainGame
+  - ResultScene
   previousScene: 0
   currentScene: 0
   sceneCount: 
