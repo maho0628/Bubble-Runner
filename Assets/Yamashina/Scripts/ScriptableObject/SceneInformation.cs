@@ -12,6 +12,7 @@ public class SceneInformation : ScriptableObject
     public enum SCENE
     {
         Title,      // タイトル
+        Scenario,
         StageOne,   // ステージ１
         End,
         
