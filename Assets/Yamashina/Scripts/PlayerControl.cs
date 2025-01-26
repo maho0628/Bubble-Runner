@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -29,6 +30,7 @@ public class PlayerControl : MonoBehaviour
     public float goalRadius = 1.0f; // ゴール地点の範囲
     public float timeLimit = 30.0f; // 制限時間 (秒)
 
+    [SerializeField, Header("elapsedTimeText")] TextMeshProUGUI elapsedTimeText;
     private float elapsedTime = 0.0f; // 経過時間
     private bool isGoalReached = false; // ゴール判定
 
@@ -69,7 +71,9 @@ public class PlayerControl : MonoBehaviour
         {
             return;
         }
-
+        // 経過時間を表示
+        float remainingTime = timeLimit - elapsedTime;
+        elapsedTimeText.text = "Time Left: " + Mathf.Max(remainingTime, 0).ToString("F2") + "s";  // 小数点以下2桁で表示
 
         if (!isGoalReached) // ゴールに到達していない場合のみ進行
         {
