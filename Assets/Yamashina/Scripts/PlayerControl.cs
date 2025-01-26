@@ -39,16 +39,34 @@ public class PlayerControl : MonoBehaviour
     public List<ParticleSystem> bubbleBodies = new List<ParticleSystem>(); // バブルのリスト
     private int bubbleDensity = 300; // バブルの密度
 
+    private bool canUpdate = false;
+
     void Start()
     {
         currentParts = maxParts; // 最大ライフでスタート
         currentSpeed = baseSpeed;
         //UpdateUI
         bubbleBodies.AddRange(GetComponentsInChildren<ParticleSystem>());
-        
+        canUpdate = false;
+
+        // Wait n seconds before starting to run
+        StartCoroutine(DelayStart(3f));
+
     }
+    IEnumerator DelayStart(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        canUpdate = true;
+    }
+
     void Update()
     {
+        // escape if before n seconds
+        if(!canUpdate)
+        {
+            return;
+        }
+
         // キャラクターを前方に移動
         // Always go forward!
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
@@ -115,7 +133,7 @@ public class PlayerControl : MonoBehaviour
     }
     IEnumerator ResetJump()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         isJumping = false;
     }
     private void ChangeLane(int direction)
@@ -149,6 +167,7 @@ public class PlayerControl : MonoBehaviour
         {
             currentParts--;
             Debug.Log(currentParts);
+            MultiAudio.ins.PlaySEByName("ObstacleCollide");
             currentSpeed -= baseSpeed / maxParts; // スピードを再計算 
             bubbleDensity -= (300 / 5);
             SetNewBubbleDensity(bubbleDensity);
@@ -192,7 +211,7 @@ public class PlayerControl : MonoBehaviour
         currentParts = Mathf.Clamp(currentParts + amount, 0, maxParts); // ライフ回復、最大値を超えない
         currentSpeed += baseSpeed / currentParts; // スピードを再計算
         Debug.Log($"Life recovered! Current life: {currentParts}");
-
+        MultiAudio.ins.PlaySEByName("PickUpSpeechBubblePlus");
         bubbleDensity += (300 / 5);
 
         if (bubbleDensity > 300)
@@ -207,6 +226,7 @@ public class PlayerControl : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("Game Over");
+        MultiAudio.ins.PlaySEByName("GameOverSound");
         currentSpeed = 0;
         SceneTransitionManager.instance.NextSceneButton(0);
         // ゲーム終了処理
