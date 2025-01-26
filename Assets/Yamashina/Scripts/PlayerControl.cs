@@ -61,7 +61,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"isGoalReached flag :{isGoalReached}");
+        //Debug.Log($"isGoalReached flag :{isGoalReached}");
         // escape if before n seconds
         if(!canUpdate)
         {
@@ -185,7 +185,7 @@ public class PlayerControl : MonoBehaviour
     private void GoalReached()
     {
         isGoalReached = true; // ゴール到達フラグ
-        Debug.Log("Goal Reached!");
+        //Debug.Log("Goal Reached!");
         SceneTransitionManager.instance.NextSceneButton(3);
 
         // ゴール達成時の処理をここに追加
