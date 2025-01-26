@@ -24,7 +24,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Playerタグかどうか確認
         {
-            PlayerControl player = other.GetComponent<PlayerControl>();
+            PlayerControl player = other.gameObject.GetComponentInParent<PlayerControl>();  
             if (player != null)
             {
                 Debug.Log($"Player detected: {other.name}, Tag: {other.tag}");
