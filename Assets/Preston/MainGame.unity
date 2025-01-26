@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.5748165, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,18 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Construction (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.27
@@ -213,18 +201,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_Name
       value: Obstacle_Sign (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -922,22 +898,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Car (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.17
@@ -999,18 +959,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_Name
       value: Obstacle_Sign
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1175,18 +1123,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_Name
       value: Obstacle_Construction (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1493,22 +1429,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Car (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.29
@@ -1570,22 +1490,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_Name
       value: Obstacle_Car (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1760,18 +1664,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_Name
       value: Obstacle_Sign (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2645,29 +2537,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1154769333}
     m_Modifications:
-    - target: {fileID: 6020892233436455387, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_Size.y
-      value: 1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020892233436455387, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_Size.z
-      value: 1.26
-      objectReference: {fileID: 0}
     - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_Name
       value: Obstacle_Construction
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2725,18 +2597,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_Name
       value: Obstacle_Sign (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2928,18 +2788,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_Name
       value: Obstacle_Construction (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4094,22 +3942,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Car
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.5
@@ -4751,22 +4583,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Car (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.8
@@ -4828,18 +4644,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_Name
       value: Obstacle_Construction (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5238,18 +5042,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_Name
       value: Obstacle_Construction (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5888,18 +5680,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Sign (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.6
@@ -5961,22 +5741,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_Name
       value: Obstacle_Car (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6040,18 +5804,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Sign (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 5d2f78f957adc4d77a0e39361a56b73e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
@@ -6108,18 +5860,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_Name
       value: Obstacle_Construction (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6183,18 +5923,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Construction (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.4555326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
-      objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: 47eac8b484f7a4c5a976fcc6f9f6fb70, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -6256,22 +5984,6 @@ PrefabInstance:
     - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_Name
       value: Obstacle_Car (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240583713206743992, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.1095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4608
       objectReference: {fileID: 0}
     - target: {fileID: 7948630714686028719, guid: c1dbe2bff7b6a4b6eaa0b1301859586d, type: 3}
       propertyPath: m_LocalPosition.x
