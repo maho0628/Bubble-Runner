@@ -8,6 +8,7 @@ TagManager:
   - BGM
   - SE
   - Obstacle
+  - goal
   layers:
   - Default
   - TransparentFX
