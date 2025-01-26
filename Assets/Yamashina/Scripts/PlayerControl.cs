@@ -100,7 +100,7 @@ public class PlayerControl : MonoBehaviour
                 transform.Translate(move, 0, 0);
             }
 
-            if (transform.position.y < -1f)
+            if (transform.position.y < -1f ^ transform.position.x > 7.2f ^ transform.position.x < -7.2f )
             {
                 GameOver(); // Dont go through the floor
             }
