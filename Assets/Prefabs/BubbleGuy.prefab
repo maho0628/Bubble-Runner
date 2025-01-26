@@ -901,7 +901,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 300
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -19764,10 +19764,7 @@ MonoBehaviour:
   baseSpeed: 40
   maxParts: 6
   LANECHANGER: 0
-  lanes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  lanes: []
   goalTransform: {fileID: 0}
   goalRadius: 1
   timeLimit: 30
@@ -19784,7 +19781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366ed86368a45024c8beddc72955c0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefab: {fileID: 0}
+  npcPrefab: {fileID: 3966155662754202395, guid: 69cf7c0c2271d6b4dbc08a12b1c8bb98, type: 3}
   spawnAreas:
   - {fileID: 0}
   spawnAreaSize: {x: 10, y: 0, z: 10}
