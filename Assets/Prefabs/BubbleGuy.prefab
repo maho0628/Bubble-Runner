@@ -14902,7 +14902,6 @@ GameObject:
   - component: {fileID: 1168082000220868451}
   - component: {fileID: 2073781063688922386}
   - component: {fileID: 9145950113002120444}
-  - component: {fileID: 161158520954029978}
   m_Layer: 0
   m_Name: BubbleGuy
   m_TagString: Untagged
@@ -19769,28 +19768,6 @@ MonoBehaviour:
   goalRadius: 1
   timeLimit: 30
   bubbleBodies: []
---- !u!114 &161158520954029978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5504838372938980426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366ed86368a45024c8beddc72955c0c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcPrefab: {fileID: 3966155662754202395, guid: 69cf7c0c2271d6b4dbc08a12b1c8bb98, type: 3}
-  spawnAreas:
-  - {fileID: 0}
-  spawnAreaSize: {x: 10, y: 0, z: 10}
-  npcCount: 5
-  npcMaterials:
-  - {fileID: 2100000, guid: 5068b466c42d24b1eb33ada6393deec9, type: 2}
-  - {fileID: 2100000, guid: 2d64a3eabed3b4adb80ca12670311cb2, type: 2}
-  - {fileID: 2100000, guid: 4a6e16b11a83d49baa45e6d6cc70d4fd, type: 2}
-  - {fileID: 2100000, guid: ef3ab2ac951824b75acbf686fa2b636d, type: 2}
 --- !u!1 &9080211491378907192
 GameObject:
   m_ObjectHideFlags: 0
