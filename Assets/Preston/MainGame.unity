@@ -7253,7 +7253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9145950113002120444, guid: f4b1a0f08b8624f4abc9adef47967b9b, type: 3}
       propertyPath: baseSpeed
-      value: 22
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9145950113002120444, guid: f4b1a0f08b8624f4abc9adef47967b9b, type: 3}
       propertyPath: goalRadius
