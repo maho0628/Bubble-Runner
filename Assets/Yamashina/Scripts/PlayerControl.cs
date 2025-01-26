@@ -61,6 +61,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        Debug.Log($"isGoalReached flag :{isGoalReached}");
         // escape if before n seconds
         if(!canUpdate)
         {
@@ -100,6 +101,8 @@ public class PlayerControl : MonoBehaviour
 
         if (!isGoalReached)
         {
+            Debug.Log($"isGoalReached flag :{isGoalReached}");
+
             elapsedTime += Time.deltaTime;
 
             // プレイヤーがゴール地点に到達しているか判定
