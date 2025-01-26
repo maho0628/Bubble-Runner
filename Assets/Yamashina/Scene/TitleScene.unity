@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.5748165, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -219,6 +219,7 @@ RectTransform:
   m_Children:
   - {fileID: 1827439755}
   - {fileID: 213813002}
+  - {fileID: 1419253139}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -873,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7624572254102008934, guid: 43b661360bac7d743a48a80470fd7963, type: 3}
       propertyPath: audioClipsBGM.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7624572254102008934, guid: 43b661360bac7d743a48a80470fd7963, type: 3}
       propertyPath: audioClipsSE.Array.data[0]
