@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3204f9f57f1cb4b43b692002396bf639, type: 3}
   - {fileID: 8300000, guid: 556e315f6ad365e4aa6b0432acf8379e, type: 3}
   - {fileID: 8300000, guid: cdce9a61fbef90c49a3b51e77f14349b, type: 3}
+  - {fileID: 8300000, guid: 487417d992beef84da7a034f1f34e187, type: 3}
   bgmSource: {fileID: 5885422791884808056, guid: 9a3e3d8b9fec6314d91858381f92fd2a, type: 3}
   seSource: {fileID: 6906251638574239432, guid: e5bb14b685010a648bb7a41d10a7422c, type: 3}
   bgmMixerGroup: {fileID: -4108538381236679251, guid: 7be6e80df0eaa3349a0f46c0e5219dc2, type: 2}
