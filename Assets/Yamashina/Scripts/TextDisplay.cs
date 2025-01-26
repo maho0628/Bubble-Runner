@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using System.Collections.Generic;
 
 public class TextDisplay : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class TextDisplay : MonoBehaviour
     private TextAsset[] textAsset;   //メモ帳のファイル(.txt)　配列
 
     [SerializeField]
-    private Text text;  //画面上の文字
+    private Text currentTextAsset;  //画面上の文字
+    public List<Text> allTextBoxes = new();
 
     [SerializeField]
     private float TypingSpeed = 1.0f;  //文字の表示速度
@@ -22,11 +24,6 @@ public class TextDisplay : MonoBehaviour
 
     private int LoadText = 0;   //何枚目のテキストを読み込んでいるのか
 
-
-
-
-    [SerializeField]
-    public GameObject TextArea; //テキスト表示域
 
     [SerializeField]
     private string customNewline = "[BR]"; // 改行として扱う文字列を指定
@@ -53,9 +50,11 @@ public class TextDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = "";// 初期化
-
-        //TextArea.SetActive(true);
+        currentTextAsset.text = "";// 初期化
+        foreach(Text atb in allTextBoxes)
+        {
+            atb.text = "";
+        }
 
         UpdateText();
     }
@@ -107,7 +106,7 @@ public class TextDisplay : MonoBehaviour
         //Debug.Log($"UpdateText: LoadText = {LoadText}");
         if (textAsset.Length > LoadText)
         {
-            text.text = "";
+            currentTextAsset.text = "";
             isTextFullyDisplayed = false;
             Debug.Log($"Displaying text: {textAsset[LoadText].text}");
             Debug.Log("Starting new TypingCoroutine");
@@ -123,6 +122,7 @@ public class TextDisplay : MonoBehaviour
     {
         Debug.Log("TextCoroutine started");
 
+
         string currentText = textAsset[LoadText].text;
 
         if (!string.IsNullOrEmpty(customNewline))
@@ -137,8 +137,8 @@ public class TextDisplay : MonoBehaviour
 
             if (string.IsNullOrWhiteSpace(currentChra))
             {
-                text.text = currentChra; //空白部分をそのまま設定する
-                Debug.Log($"Text.text is now: {text.text}");
+                currentTextAsset.text = currentChra; //空白部分をそのまま設定する
+                Debug.Log($"Text.text is now: {currentTextAsset.text}");
 
                 yield return new WaitForSeconds(TextSpeed);
                 continue;  //次のループへ
@@ -148,7 +148,7 @@ public class TextDisplay : MonoBehaviour
             //textAsset[LoadText].text.Lengthによって中のテキストデータの文字数の所得
             yield return new WaitForSeconds(TextSpeed); //指定された時間待機する
 
-            text.text = currentChra;  //iが増えるたびに文字を一文字ずつ表示していく
+            currentTextAsset.text = currentChra;  //iが増えるたびに文字を一文字ずつ表示していく
 
         }
 
@@ -162,6 +162,7 @@ public class TextDisplay : MonoBehaviour
         {
             StopCoroutine(TypingCroutine); // コルーチンを停止
         }
+
         string fullText = textAsset[LoadText].text;
 
         if (!string.IsNullOrEmpty(customNewline))
@@ -172,8 +173,8 @@ public class TextDisplay : MonoBehaviour
         Debug.Log($"Setting full text: {fullText}");
 
         // 現在のテキストをすべて表示
-        text.text = fullText;
-        Debug.Log($"Text.text after full display: {text.text}");
+        currentTextAsset.text = fullText;
+        Debug.Log($"Text.text after full display: {currentTextAsset.text}");
 
         isTextFullyDisplayed = true; // 完全表示状態にする
     }
@@ -183,7 +184,8 @@ public class TextDisplay : MonoBehaviour
         if (LoadText < textAsset.Length - 1)
         {
             LoadText++;
-            //UpdateText(); // 新しいテキストを表示
+            currentTextAsset = allTextBoxes[LoadText];
+            //UpdateText(); // 新しいテキストを表示ß
         }
         else
         {
