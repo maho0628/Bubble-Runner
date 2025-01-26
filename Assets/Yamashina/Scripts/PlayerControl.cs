@@ -70,45 +70,45 @@ public class PlayerControl : MonoBehaviour
             return;
         }
 
-        // キャラクターを前方に移動
-        // Always go forward!
-        transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
 
-        // Two movement options 
-        if (LANECHANGER)
+        if (!isGoalReached) // ゴールに到達していない場合のみ進行
         {
-            // レーンの切り替え
-            if (Input.GetKeyDown(KeyCode.A))
+            // キャラクターを前方に移動
+            // Always go forward!
+            transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+
+            // Two movement options 
+            if (LANECHANGER)
             {
-                ChangeLane(-1);
+                // レーンの切り替え
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    ChangeLane(-1);
+                }
+                else if (Input.GetKeyDown(KeyCode.D))
+                {
+                    ChangeLane(1);
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.D))
+            else
             {
-                ChangeLane(1);
+                float move = Input.GetAxis("Horizontal") * 20.0f * Time.deltaTime;
+                transform.Translate(move, 0, 0);
             }
-        }
-        else
-        {
-            float move = Input.GetAxis("Horizontal") * 20.0f * Time.deltaTime;
-            transform.Translate(move, 0, 0);
-        }
 
-        if(transform.position.y < -1f)
-        {
-            GameOver(); // Dont go through the floor
-        }
+            if (transform.position.y < -1f)
+            {
+                GameOver(); // Dont go through the floor
+            }
 
-        if (currentParts <= 0)
-        {
-            currentParts = 1; // 最低でも1にする
-        }
+            if (currentParts <= 0)
+            {
+                currentParts = 1; // 最低でも1にする
+            }
 
-        Jump();
+            Jump();
 
-        if (!isGoalReached)
-        {
-            //Debug.Log($"isGoalReached flag :{isGoalReached}");
-
+            // ゴール判定
             elapsedTime += Time.deltaTime;
 
             // プレイヤーがゴール地点に到達しているか判定
@@ -123,10 +123,9 @@ public class PlayerControl : MonoBehaviour
             {
                 TimeOut(); // タイムアウト処理
             }
-
-
         }
-    }
+    
+}
     void Jump()
     {
         if (Input.GetButtonDown("Jump"))
