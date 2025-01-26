@@ -248,6 +248,7 @@ public class PlayerControl : MonoBehaviour
         MultiAudio.ins.PlaySEByName("GameOverSound");
         currentSpeed = 0;
         SceneTransitionManager.instance.NextSceneButton(0);
+        Destroy(gameObject);
         // ƒQ[ƒ€I—¹ˆ—
     }
 

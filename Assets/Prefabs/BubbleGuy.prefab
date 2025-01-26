@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 1130367992840117003}
   serializedVersion: 2
   m_LocalRotation: {x: 0.21428713, y: -0, z: -0, w: 0.97677076}
-  m_LocalPosition: {x: 0, y: 3.09, z: -4.16}
+  m_LocalPosition: {x: 0, y: 3.09, z: -2.82}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19829,6 +19829,7 @@ MonoBehaviour:
   goalTransform: {fileID: 0}
   goalRadius: 6
   timeLimit: 30
+  elapsedTimeText: {fileID: 0}
   bubbleBodies: []
   bubbleBodyMaxEmissionRates: 
 --- !u!1 &9080211491378907192
