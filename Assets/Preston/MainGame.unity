@@ -3025,6 +3025,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9080211491378907192, guid: f4b1a0f08b8624f4abc9adef47967b9b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 9145950113002120444, guid: f4b1a0f08b8624f4abc9adef47967b9b, type: 3}
       propertyPath: baseSpeed
       value: 40
@@ -3049,7 +3053,8 @@ PrefabInstance:
       propertyPath: lanes.Array.data[2]
       value: 
       objectReference: {fileID: 1803155705}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 161158520954029978, guid: f4b1a0f08b8624f4abc9adef47967b9b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
