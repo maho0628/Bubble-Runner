@@ -10,21 +10,34 @@ Material:
   m_Name: rootBrown
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 2100000, guid: cdd2f0deda7c96448951b7e6aac81a6e, type: 2}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ModifiedSerializedProperties: 16
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 20}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 530bf83bcea6a27b687f25269ccd65e6, type: 3}
+        m_Scale: {x: 1, y: 20}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Mode: 1
+    - _SmoothnessTextureChannel: 1
     m_Colors:
-    - _Color: {r: 0.9433962, g: 0.4352109, b: 0, a: 1}
+    - _Color: {r: 0.6146269, g: 0.29352376, b: 0.19479384, a: 1}
   m_BuildTextureStacks: []
