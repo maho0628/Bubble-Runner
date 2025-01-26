@@ -20,12 +20,12 @@ public class SceneTransitionManager : MonoBehaviour
 
         SetCurrentScene(SceneManager.GetActiveScene().buildIndex);
 
+        PlayBGMForScene();
 
 
         StartCoroutine(FadeIn());
 
         // MultiAudio の初期化を確認
-
 
 
 
@@ -52,7 +52,7 @@ public class SceneTransitionManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         InitializeReferences(); // シーンロード後に再取得
-        //PlayBGMForScene();
+        PlayBGMForScene();
 
     }
     public void ReloadCurrentScene()
@@ -98,64 +98,49 @@ public class SceneTransitionManager : MonoBehaviour
     }
     public void SetCurrentScene(int sceneIndex) { currentScene = (SceneInformation.SCENE)sceneIndex; }
 
-    //private void PlayBGMForScene()
-    //{
-    //    string sceneName = SceneManager.GetActiveScene().name;
-    //    string bgmName = "";
+    private void PlayBGMForScene()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        string bgmName = "";
 
-    //    switch (sceneName)
-    //    {
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.Title):
-    //            bgmName = "BGM_title"; // タイトル画面のBGM名
-    //            break;
+        switch (sceneName)
+        {
+            case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.Title):
+                bgmName = "TitleTheme"; // タイトル画面のBGM名
+                break;
 
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageOne):
-    //            bgmName = "BGM_stage_01"; // ステージ1のBGM名
-    //            break;
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageOne_BOSS):
-    //            bgmName = "BGM_stage_01"; // ステージ1のBGM名
-    //            break;
+            case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.Scenario):
+                bgmName = "BackstoryTheme"; // ステージ1のBGM名
+                break;
+            case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageOne):
+                bgmName = "RunningTheme"; // ステージ1のBGM名
+                break;
 
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageTwo):
-    //            bgmName = "BGM_stage_02"; // ステージ2のBGM名
-    //            break;
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageTwo_BOSS):
-    //            bgmName = "BGM_stage_02"; // ステージ2のBGM名
-    //            break;
-
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageThree):
-    //            bgmName = "BGM_stage_03"; // ステージ3のBGM名
-    //            break;
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageThree_BOSS):
-    //            bgmName = "BGM_stage_03"; // ステージ3のBGM名
-    //            break;
-
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageFour)://親友予定
-    //            bgmName = "BGM_stage_03_5"; // ステージ3.5のBGM名
-    //            break;
-    //        case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.StageFive):
-    //            bgmName = "BGM_stage_04"; // ステージ4のBGM名 ラスボス
-    //            break;
-
-    //        default:
-    //            Debug.LogWarning($"No BGM assigned for the scene '{sceneName}'.");
-    //            return; // BGMが指定されていない場合は終了
-    //    }
-
-    //    if (!string.IsNullOrEmpty(bgmName))
-    //    {
-    //        MultiAudio.ins.PlayBGM_ByName(bgmName); // BGMを再生
-    //        Debug.Log(bgmName);
-    //    }
-    //}
+            //case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.End):
+            //    bgmName = "BGM_stage_02"; // ステージ2のBGM名
+            //    break;
 
 
-    ///// <summary>
-    ///// シーンを遷移させる
-    ///// </summary>
-    ///// <param name="scene"></param>
+            default:
+                Debug.LogWarning($"No BGM assigned for the scene '{sceneName}'.");
+                return; // BGMが指定されていない場合は終了
+        }
+        if (!string.IsNullOrEmpty(bgmName))
+        {
+            MultiAudio.ins.PlayBGM_ByName(bgmName); // BGMを再生
+            Debug.Log(bgmName);
+        }
+    }
+           
+        //}
 
-    public void SceneChange(SceneInformation.SCENE scene)
+
+        ///// <summary>
+        ///// シーンを遷移させる
+        ///// </summary>
+        ///// <param name="scene"></param>
+
+        public void SceneChange(SceneInformation.SCENE scene)
     {
         if (isReloading) return; // シーン変更中なら処理をスキップ
         isReloading = true; // シーン変更中に設定
