@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneObject:
   - m_SceneName: TitleScene
-  - m_SceneName: TextScene
+  - m_SceneName: BackstoryScene
   - m_SceneName: MainGame
   - m_SceneName: ResultScene
   sceneNames:
   - TitleScene
-  - TextScene
+  - BackstoryScene
   - MainGame
   - ResultScene
   previousScene: 0
