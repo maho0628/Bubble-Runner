@@ -116,9 +116,9 @@ public class SceneTransitionManager : MonoBehaviour
                 bgmName = "RunningTheme"; // ステージ1のBGM名
                 break;
 
-            //case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.End):
-            //    bgmName = "BGM_stage_02"; // ステージ2のBGM名
-            //    break;
+            case string name when name == sceneInformation.GetSceneName(SceneInformation.SCENE.End):
+                bgmName = "GameResultTheme"; // ステージ2のBGM名
+                break;
 
 
             default:
