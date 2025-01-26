@@ -101,7 +101,7 @@ public class PlayerControl : MonoBehaviour
 
         if (!isGoalReached)
         {
-            Debug.Log($"isGoalReached flag :{isGoalReached}");
+            //Debug.Log($"isGoalReached flag :{isGoalReached}");
 
             elapsedTime += Time.deltaTime;
 
@@ -128,6 +128,7 @@ public class PlayerControl : MonoBehaviour
             Debug.Log("Jump!");
             if (!isJumping)
             {
+                MultiAudio.ins.PlaySEByName("JumpSound");
                 GetComponentInChildren<Rigidbody>().AddForce(new Vector2(0, 5), ForceMode.Impulse);
                 isJumping = true;
             }
