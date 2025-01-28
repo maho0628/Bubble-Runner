@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "SceneInformation", menuName = "ScriptableObjects/StageInformation")]
@@ -15,7 +13,7 @@ public class SceneInformation : ScriptableObject
         Scenario,
         StageOne,   // ステージ１
         End,
-        
+
 
 
     }
@@ -47,7 +45,7 @@ public class SceneInformation : ScriptableObject
     {
         return (int)scene;
     }
-    public int GetCurrentScene() {  return SceneManager.GetActiveScene().buildIndex; }
+    public int GetCurrentScene() { return SceneManager.GetActiveScene().buildIndex; }
 
 
     public int GetSceneIndex(SCENE scene)

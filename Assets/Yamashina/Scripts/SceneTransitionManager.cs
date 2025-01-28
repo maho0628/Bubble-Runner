@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,28 +9,22 @@ public class SceneTransitionManager : MonoBehaviour
     [SerializeField] private GameObject fadePrefab; // フェード用プレハブ
     private Image fadeInstance; // 実際に使用するフェード用 Image
     [SerializeField] private SceneInformation.SCENE currentScene;  // 今のシーン                  // 今のシーン
-    private bool isReloading = false; // リロード中かどうかを判定するフラグ
+    public bool isReloading = false; // リロード中かどうかを判定するフラグ
     [Header("fadeSpeed、 0.1 ～ 5.0")]
     [SerializeField] private float fadeSpeed = 1.0f; // フェード速度
+    private float tempFadeSpeed;
     public static SceneTransitionManager instance;
 
     private void Start()
     {
-
+        tempFadeSpeed = fadeSpeed;
+        fadeSpeed = 0.01f;
         SetCurrentScene(SceneManager.GetActiveScene().buildIndex);
-
         PlayBGMForScene();
-
-
         StartCoroutine(FadeIn());
 
         // MultiAudio の初期化を確認
-
-
-
-
     }
-
 
 
     private void Awake()
@@ -61,9 +54,9 @@ public class SceneTransitionManager : MonoBehaviour
         isReloading = true; // リロード中に設定
         StartCoroutine(FadeOut(SceneManager.GetActiveScene().name));
     }
+
     public void InitializeReferences()
     {
-
         if (fadeInstance == null)
         {
             if (fadePrefab != null)
@@ -128,24 +121,25 @@ public class SceneTransitionManager : MonoBehaviour
         if (!string.IsNullOrEmpty(bgmName))
         {
             MultiAudio.ins.PlayBGM_ByName(bgmName); // BGMを再生
-            Debug.Log(bgmName);
+            //Debug.Log(bgmName);
         }
     }
-           
-        //}
+
+    //}
 
 
-        ///// <summary>
-        ///// シーンを遷移させる
-        ///// </summary>
-        ///// <param name="scene"></param>
+    ///// <summary>
+    ///// シーンを遷移させる
+    ///// </summary>
+    ///// <param name="scene"></param>
 
-        public void SceneChange(SceneInformation.SCENE scene)
+    public void SceneChange(SceneInformation.SCENE scene)
     {
         if (isReloading) return; // シーン変更中なら処理をスキップ
         isReloading = true; // シーン変更中に設定
         StartCoroutine(FadeOut(sceneInformation.GetSceneObject(scene)));
     }
+
     //ボタンでシーン遷移する場合
     public void NextSceneButton(int index)
     {
@@ -159,6 +153,7 @@ public class SceneTransitionManager : MonoBehaviour
     // <summary>    / <returns
     private IEnumerator FadeIn()
     {
+        Debug.Log("Fade IN");
         fadeInstance.gameObject.SetActive(true);
         Color fadeColor = fadeInstance.color; // 一時変数を使用
         fadeColor.a = 1; // 最初は完全に不透明
@@ -174,9 +169,11 @@ public class SceneTransitionManager : MonoBehaviour
             yield return null;
         }
 
-        // 完全に透明になったら非アクティブ化
         fadeInstance.gameObject.SetActive(false);
         isReloading = false; // リロードが完了したのでフラグをリセット
+        fadeSpeed = tempFadeSpeed;
+        Debug.Log("Done Loading");
+        // 完全に透明になったら非アクティブ化
 
     }
 
@@ -231,20 +228,10 @@ public class SceneTransitionManager : MonoBehaviour
     }
 
 
-
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-
-
-
-
-
-
-
-
 
 }
 

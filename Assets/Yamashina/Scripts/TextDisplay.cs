@@ -1,14 +1,10 @@
-﻿using TMPro;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
 public class TextDisplay : MonoBehaviour
 {
-
- 
-
     [SerializeField]
     private TextAsset[] textAsset;   //メモ帳のファイル(.txt)　配列
 
@@ -49,7 +45,7 @@ public class TextDisplay : MonoBehaviour
     void Start()
     {
         currentTextAsset.text = "";// 初期化
-        foreach(Text atb in allTextBoxes)
+        foreach (Text atb in allTextBoxes)
         {
             atb.text = "";
         }
@@ -60,11 +56,9 @@ public class TextDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log($"isTextFullyDisplayedは{isTextFullyDisplayed}");
 
-
-        Debug.Log($"isTextFullyDisplayedは{isTextFullyDisplayed}");
-
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.anyKeyDown)
         {
             if (!isTextFullyDisplayed)
             {
@@ -83,11 +77,8 @@ public class TextDisplay : MonoBehaviour
                 SceneTransitionManager.instance.NextSceneButton(2); ; // 全てのテキストを読み終えたら閉じる
 
 
-
             }
         }
-
-
     }
     public void UpdateText()
     {
@@ -106,8 +97,8 @@ public class TextDisplay : MonoBehaviour
         {
             currentTextAsset.text = "";
             isTextFullyDisplayed = false;
-            Debug.Log($"Displaying text: {textAsset[LoadText].text}");
-            Debug.Log("Starting new TypingCoroutine");
+            //Debug.Log($"Displaying text: {textAsset[LoadText].text}");
+            //Debug.Log("Starting new TypingCoroutine");
 
             TypingCroutine = StartCoroutine(TextCoroutine());
         }
@@ -131,7 +122,7 @@ public class TextDisplay : MonoBehaviour
         for (int i = 0; i < currentText.Length; i++)   //テキストの中の文字を取得して、文字数を増やしていく
         {
             string currentChra = currentText.Substring(0, i); //現在の文字を所得する
-            Debug.Log($"Setting Text.text: {currentChra}");
+            //Debug.Log($"Setting Text.text: {currentChra}");
 
             if (string.IsNullOrWhiteSpace(currentChra))
             {
@@ -192,7 +183,7 @@ public class TextDisplay : MonoBehaviour
     }
 
     // テキストエリアを閉じる
-  
+
     //private void OnGUI()
     //{
     //    GUI.skin.label.fontSize = 30;  // 例えば30に設定

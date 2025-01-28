@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -12,7 +10,7 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
-        npcRenderer = GetComponent<Renderer>();    
+        npcRenderer = GetComponent<Renderer>();
         if (npcMaterials.Length > 0 && npcRenderer != null)
         {
             // ランダムなスプライトを選択
@@ -24,7 +22,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Playerタグかどうか確認
         {
-            PlayerControl player = other.gameObject.GetComponentInParent<PlayerControl>();  
+            PlayerControl player = other.gameObject.GetComponentInParent<PlayerControl>();
             if (player != null)
             {
                 Debug.Log($"Player detected: {other.name}, Tag: {other.tag}");

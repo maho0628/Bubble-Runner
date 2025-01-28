@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.5748165, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 83702899}
   - component: {fileID: 83702898}
   - component: {fileID: 83702897}
+  - component: {fileID: 83702901}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -219,6 +220,8 @@ RectTransform:
   m_Children:
   - {fileID: 2005499431}
   - {fileID: 481596245}
+  - {fileID: 109460217}
+  - {fileID: 213813002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -226,6 +229,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &83702901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83702896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a19136e6acfe84983f6bb0ff46881b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiAudio: {fileID: 1441312962}
 --- !u!1 &109460216
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,16 +268,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109460216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 213813002}
+  m_Father: {fileID: 83702900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 38, y: -13}
-  m_SizeDelta: {x: -12.2385, y: 0.000022888}
+  m_AnchoredPosition: {x: 563, y: -467.30887}
+  m_SizeDelta: {x: -1685.8485, y: -1011.0931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109460218
 MonoBehaviour:
@@ -296,7 +312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: Any Key to Start
 --- !u!222 &109460219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -323,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &213813002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -335,13 +351,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 109460217}
-  m_Father: {fileID: 481596245}
+  m_Children: []
+  m_Father: {fileID: 83702900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33, y: 12.706}
+  m_AnchoredPosition: {x: 525, y: -454.30887}
   m_SizeDelta: {x: 246.39, y: 68.9069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213813003
@@ -479,14 +494,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 213813002}
+  m_Children: []
   m_Father: {fileID: 83702900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 742.228, y: -467.01486}
-  m_SizeDelta: {x: 306.3622, y: 94.318}
+  m_AnchoredPosition: {x: 558, y: -467.01486}
+  m_SizeDelta: {x: 725.33, y: 94.318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481596246
 MonoBehaviour:
@@ -881,6 +895,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2036908694365405528, guid: 8196467f728e44a4fbf6f7d793d5d6ee, type: 3}
+      propertyPath: fadeSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2752137397931085381, guid: 8196467f728e44a4fbf6f7d793d5d6ee, type: 3}
       propertyPath: fadePrefab
       value: 

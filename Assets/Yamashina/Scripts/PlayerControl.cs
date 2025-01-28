@@ -1,11 +1,7 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -18,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     public bool LANECHANGER = true;
 
     [Header("Runtime Values")]
-   [SerializeField,Tooltip("The current speed of the character, dynamically adjusted during gameplay.")]
+    [SerializeField, Tooltip("The current speed of the character, dynamically adjusted during gameplay.")]
     public static float currentSpeed; // 現在の速度
     [SerializeField, Tooltip("The current number of lives the character has.This decreases when the character hits obstacles")]
 
@@ -33,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField, Header("elapsedTimeText")] TextMeshProUGUI elapsedTimeText;
     private float elapsedTime = 0.0f; // 経過時間
     private bool isGoalReached = false; // ゴール判定
-
+    private bool isGameOver = false;
     private bool isJumping = false;
     //[Header("UI Elements")]
     //public Text lifeText; // UI表示用
@@ -67,7 +63,7 @@ public class PlayerControl : MonoBehaviour
     {
         //Debug.Log($"isGoalReached flag :{isGoalReached}");
         // escape if before n seconds
-        if(!canUpdate)
+        if (!canUpdate)
         {
             return;
         }
@@ -100,7 +96,7 @@ public class PlayerControl : MonoBehaviour
                 transform.Translate(move, 0, 0);
             }
 
-            if (transform.position.y < -1f ^ transform.position.x > 7.2f ^ transform.position.x < -7.2f )
+            if (transform.position.y < -1f ^ transform.position.x > 7.2f ^ transform.position.x < -7.2f)
             {
                 GameOver(); // Dont go through the floor
             }
@@ -128,8 +124,8 @@ public class PlayerControl : MonoBehaviour
                 TimeOut(); // タイムアウト処理
             }
         }
-    
-}
+
+    }
     void Jump()
     {
         if (Input.GetButtonDown("Jump"))
@@ -244,6 +240,8 @@ public class PlayerControl : MonoBehaviour
     }
     private void GameOver()
     {
+        if(isGameOver) return;
+        isGameOver = true;
         Debug.Log("Game Over");
         MultiAudio.ins.PlaySEByName("GameOverSound");
         currentSpeed = 0;
@@ -256,7 +254,7 @@ public class PlayerControl : MonoBehaviour
         foreach (ParticleSystem bubble in bubbleBodies)
         {
             var emission = bubble.emission;
-            float newEmissionRate = bubbleBodyMaxEmissionRates[bubbleBodies.IndexOf(bubble)] * (currentParts / maxLives );
+            float newEmissionRate = bubbleBodyMaxEmissionRates[bubbleBodies.IndexOf(bubble)] * (currentParts / maxLives);
             Debug.Log(newEmissionRate);
             emission.rateOverTime = newEmissionRate;
         }

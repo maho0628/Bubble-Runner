@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCSpawner : MonoBehaviour
@@ -14,7 +12,7 @@ public class NPCSpawner : MonoBehaviour
 
     private void Start()
     {
-        playerControl= FindAnyObjectByType<PlayerControl>();    
+        playerControl = FindAnyObjectByType<PlayerControl>();
         for (int i = 0; i < npcCount; i++)
         {
             SpawnNPC();
