@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,8 +23,15 @@ public class pressTheAnyKey : MonoBehaviour
         {
             if (Input.anyKeyDown && !IsMouseButtonDown())
             {
-                SceneTransitionManager.instance.SceneChange(SceneInformation.SCENE.Scenario);
-                multiAudio.PlaySEByName("GameStartSound");
+		if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				Application.Quit();
+			}
+		else
+			{
+                		SceneTransitionManager.instance.SceneChange(SceneInformation.SCENE.Scenario);
+                		multiAudio.PlaySEByName("GameStartSound");
+			}
             }
         }
     }
